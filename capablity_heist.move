@@ -1,8 +1,4 @@
-/*
-    In the first place, this quest requires from you complete the smart contract following provided hints (TODOs)
-    After that, you should answer the four questions located in "QUESTIONS AND ANSWERS" section and type your answers
-        in the corresponding consts with prefix "USER_ANSWER" in capability_heist module.
-*/
+
 module overmind::capability_heist {
     use std::signer;
     use std::string::{Self, String};
@@ -13,9 +9,6 @@ module overmind::capability_heist {
 
     friend overmind::capability_heist_test;
 
-    ////////////
-    // ERRORS //
-    ////////////
 
     const ERROR_ACCESS_DENIED: u64 = 0;
     const ERROR_ROBBER_NOT_INITIALIZED: u64 = 1;
@@ -24,10 +17,7 @@ module overmind::capability_heist {
     // Seed for PDA account
     const SEED: vector<u8> = b"CapabilityHeist";
 
-    ///////////////////////////
-    // QUESTIONS AND ANSWERS //
-    ///////////////////////////
-
+   
     const ENTER_BANK_QUESTION: vector<u8> = b"What function is used to initialize a capability? The answer should start with a lower-case letter";
     const ENTER_BANK_ANSWER: vector<u8> = x"811d26ef9f4bfd03b9f25f0a8a9fa7a5662460773407778f2d10918037194536091342f3724a9db059287c0d06c6942b66806163964efc0934d7246d1e4a570d";
 
@@ -45,10 +35,7 @@ module overmind::capability_heist {
     const GET_KEYCARD_USER_ANSWER: vector<u8> = b"2";
     const OPEN_VAULT_USER_ANSWER: vector<u8> = b"No";
 
-    /////////////////////////
-    // CAPABILITY FEATURES //
-    /////////////////////////
-
+  
     struct EnterBank has drop {}
     struct TakeHostage has drop {}
     struct GetKeycard has drop {}
